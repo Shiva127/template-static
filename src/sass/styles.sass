@@ -1,0 +1,33 @@
+$footer-padding: .5rem
+
+@import "../../node_modules/bulma/sass/utilities/_all"
+@import "../../node_modules/bulma/sass/base/_all"
+
+@import "../../node_modules/bulma/sass/components/level"
+@import "../../node_modules/bulma/sass/components/navbar"
+@import "../../node_modules/bulma/sass/elements/container"
+@import "../../node_modules/bulma/sass/elements/content"
+@import "../../node_modules/bulma/sass/elements/title"
+@import "../../node_modules/bulma/sass/layout/footer"
+@import "../../node_modules/bulma/sass/layout/hero"
+@import "../../node_modules/bulma/sass/layout/section"
+
+html,
+body
+  height: 100%
+
+body
+  display: flex
+  flex-direction: column
+  overflow-wrap: break-word
+
+.page
+  // Description complète pour IE
+  flex: 1 0 auto
+  overflow: hidden
+
+.level
+  img
+    min-height: 5rem
+    height: 10vw
+    max-height: 10rem
