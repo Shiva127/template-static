@@ -8,6 +8,7 @@ let pug = require('gulp-pug')
 let rename = require('gulp-rename')
 let rimraf = require('rimraf')
 let sass = require('gulp-sass')
+let sourcemaps = require('gulp-sourcemaps')
 let uglify = require('gulp-uglify')
 
 function clean (done) {
@@ -25,6 +26,7 @@ function views () {
 function styles () {
   return gulp.src('src/sass/styles.sass')
     .pipe(plumber())
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed'
     }))
@@ -33,6 +35,7 @@ function styles () {
       cascade: false
     }))
     .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/css'))
     .pipe(connect.reload())
 }
