@@ -24,7 +24,7 @@ function views () {
 }
 
 function styles () {
-  return gulp.src('src/sass/styles.sass')
+  return gulp.src('src/sass/styles.sass', { allowEmpty: true })
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(sass({
@@ -41,7 +41,7 @@ function styles () {
 }
 
 function scripts () {
-  return gulp.src('src/js/scripts.js')
+  return gulp.src('src/js/scripts.js', { allowEmpty: true })
     .pipe(plumber())
     .pipe(babel({
       presets: ['@babel/preset-env']
