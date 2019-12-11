@@ -11,7 +11,7 @@ let sass = require('gulp-sass')
 let uglify = require('gulp-uglify')
 
 function clean (done) {
-  rimraf('build/*', done)
+  rimraf('build/', done)
 }
 
 function views () {
