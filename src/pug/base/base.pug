@@ -8,13 +8,10 @@ html.has-navbar-fixed-top(lang="en")
     title Template for static site
     link(rel="icon" href="/favicon.ico" type="image/png")
     link(rel="stylesheet" href="/css/styles.min.css")
+    script(src="/js/scripts.min.js" defer)
+
   body
-
     include ../partials/header.pug
-
     main
       block content
-
     include ../partials/footer.pug
-
-    script(src="/js/scripts.min.js")
