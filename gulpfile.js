@@ -1,15 +1,16 @@
-let autoprefixer = require('gulp-autoprefixer')
-let babel = require('gulp-babel')
-let connect = require('gulp-connect')
-let getPort = require('get-port')
-let gulp = require('gulp')
-let plumber = require('gulp-plumber')
-let pug = require('gulp-pug')
-let rename = require('gulp-rename')
-let rimraf = require('rimraf')
-let sass = require('gulp-sass')
-let sourcemaps = require('gulp-sourcemaps')
-let uglify = require('gulp-uglify')
+import autoprefixer from 'gulp-autoprefixer'
+import babel from 'gulp-babel'
+import connect from 'gulp-connect'
+import getPort, { portNumbers } from 'get-port'
+import gulp from 'gulp'
+import plumber from 'gulp-plumber'
+import pug from 'gulp-pug'
+import rename from 'gulp-rename'
+import rimraf from 'rimraf'
+import gulpSass from 'gulp-sass'
+import sass from 'sass'
+import sourcemaps from 'gulp-sourcemaps'
+import uglify from 'gulp-uglify'
 
 function clean (done) {
   rimraf('build/', done)
@@ -27,7 +28,7 @@ function styles () {
   return gulp.src('src/sass/styles.sass', { allowEmpty: true })
     .pipe(plumber())
     .pipe(sourcemaps.init())
-    .pipe(sass({
+    .pipe(gulpSass(sass)({
       outputStyle: 'compressed'
     }))
     .pipe(autoprefixer({
@@ -56,10 +57,7 @@ async function server (done) {
   connect.server({
     root: 'build',
     livereload: true,
-    port: await getPort({
-      host: 'localhost',
-      port: getPort.makeRange(8080, 8099)
-    })
+    port: await getPort({ port: portNumbers(8080, 8099) })
   })
   done()
 }
@@ -80,5 +78,5 @@ function watches (done) {
 let build = gulp.series(clean, gulp.parallel(views, styles, assets, scripts))
 let watch = gulp.series(build, gulp.parallel(watches, server))
 
-exports.default = watch
-exports.build = build
+export default watch
+export { build }
