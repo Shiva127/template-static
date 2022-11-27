@@ -1,11 +1,21 @@
-# Développement
+# Template static
+
+Template pour mes sites internet static.
+
+## Installation
 
 ```
-npm start
+yarn install
 ```
 
-# Compilation
+## Développement
 
 ```
-npm run build
+yarn dev
+```
+
+## Compilation
+
+```
+yarn build
 ```

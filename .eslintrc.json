@@ -1,8 +1,6 @@
 {
   "extends": "standard",
   "rules": {
-    "object-curly-spacing": ["error", "always"],
-    "array-bracket-spacing": ["error", "never"],
     "no-var": "error",
     "prefer-const": "off"
   }

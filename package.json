@@ -6,7 +6,7 @@
   "private": true,
   "main": "gulpfile.js",
   "scripts": {
-    "start": "gulp",
+    "dev": "gulp",
     "build": "gulp build"
   },
   "author": "Gilles Marchand <gilles.marchand@swiss-connection.net>",
@@ -14,11 +14,12 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
-    "eslint": "^7.26.0",
-    "eslint-config-standard": "^16.0.2",
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^6.1.1",
     "get-port": "^6.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^8.0.0",
